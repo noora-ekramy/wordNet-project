@@ -20,9 +20,11 @@ namespace wordNet_project
             List<int> Maping_Answer = new List<int>();
             Maping_Answer = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs( New_Graph.Words, "a");
             #endregion
+
             #region testing Graph Construction for Efficient SCA
             Graph_Construction_For_Efficient_SCA New_Graph_E = new Graph_Construction_For_Efficient_SCA(lines, lines1);
             #endregion
+
             #region test Efficient SCA
             List<string> s = new List<string>
             {
