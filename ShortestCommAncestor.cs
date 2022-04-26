@@ -10,7 +10,7 @@ namespace wordNet_project
         public int shortestAncestorID = -1;
         public int shortestLength = int.MaxValue;
         public List<int> shortestPath = new List<int>();
-        private List<List<int>> Graph;
+        public List<List<int>> Graph;
         private List<List<int>> pathsOf1 = new List<List<int>>();
         private List<List<int>> pathsOf2 = new List<List<int>>();
         private List<List<int>> commonPaths = new List<List<int>>();
