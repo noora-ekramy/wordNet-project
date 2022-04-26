@@ -50,21 +50,6 @@ namespace wordNet_project
                     VisitVertex(ID1, ID2, v, -1);
             }
             
-            Console.WriteLine("FINAL PATHS:");
-            foreach (List<int>path in pathsOf1)
-            {
-                Console.WriteLine("Path of 1: ");
-                foreach (int vertex in path)
-                    Console.WriteLine(vertex);
-            }
-
-            foreach (List<int> path in pathsOf2)
-            {
-                Console.WriteLine("Path of 2: ");
-                foreach (int vertex in path)
-                    Console.WriteLine(vertex);
-            }
-            
             List<int> shortestPath1 = new List<int>();
             List<int> shortestPath2 = new List<int>();
             int minPathLen = int.MaxValue;
