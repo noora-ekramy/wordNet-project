@@ -72,7 +72,8 @@ namespace wordNet_project
                 foreach(string j in splited_line)
                 {
                     if (int.Parse(j) == ID) continue;
-                    Graph[int.Parse(j)].Add(ID);
+                    //Graph[int.Parse(j)].Add(ID);
+                    Graph[ID].Add(int.Parse(j));
                 }
 
                 

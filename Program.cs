@@ -23,9 +23,16 @@ namespace wordNet_project
             Maping_Answer = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs( New_Graph.Words, "a");
             #endregion
 
-
-
-
+            #region testing SCA
+            ShortestCommAncestor SCA = new ShortestCommAncestor(New_Graph.Graph);
+            SCA.FindSCA(0, 9);
+            Console.WriteLine("SCA = " + SCA.shortestAncestorID);
+            Console.WriteLine("Length = " + SCA.shortestLength);
+            foreach (int vertex in SCA.shortestPath)
+            {
+                Console.WriteLine(vertex);
+            }
+            #endregion
         }
     }
 }
