@@ -36,7 +36,14 @@ namespace wordNet_project
         public void FindSCA(int ID1, int ID2)
         {
             status = new Color[Graph.Count];
-
+            // Return length 0 as both input nodes are the same one
+            if (ID1 == ID2)
+            {
+                shortestAncestorID = ID1;
+                shortestPath.Add(ID1);
+                shortestLength = 0;
+                return;
+            }
             // Initialize all vertices
             for (int i = 0; i < Graph.Count; i++)
                 status[i] = Color.WHITE;
