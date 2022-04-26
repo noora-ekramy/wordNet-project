@@ -15,7 +15,7 @@ namespace wordNet_project
             lines = ReadFromFile.Read_From_File("..\\..\\..\\Testcases\\Sample\\Case1\\Input\\1synsets.txt");
             List<string> lines1 = new List<string>();
             lines1 = ReadFromFile.Read_From_File("..\\..\\..\\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
-            Graph_construction New_Graph = new Graph_construction(lines, lines1);
+            Graph_Construction_For_Efficient_SCA New_Graph = new Graph_Construction_For_Efficient_SCA(lines, lines1);
             #endregion
 
             #region testing Maping Nouns to IDs
