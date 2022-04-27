@@ -7,7 +7,7 @@ namespace wordNet_project
 {
     class ShortestCommAncestor
     {
-        public int shortestAncestorID = -1;
+        private int shortestAncestorID = -1;
         public int shortestLength = int.MaxValue;
         public List<int> shortestPath = new List<int>();
         public List<List<int>> Graph;
@@ -33,7 +33,7 @@ namespace wordNet_project
         }
 
         // Uses DFS (not optimally)
-        public void FindSCA(int ID1, int ID2)
+        public int getSCA(int ID1, int ID2)
         {
             status = new Color[Graph.Count];
             // Return length 0 as both input nodes are the same one
@@ -42,7 +42,7 @@ namespace wordNet_project
                 shortestAncestorID = ID1;
                 shortestPath.Add(ID1);
                 shortestLength = 0;
-                return;
+                return ID1;
             }
             // Initialize all vertices
             for (int i = 0; i < Graph.Count; i++)
@@ -52,7 +52,7 @@ namespace wordNet_project
             for (int v = 0; v < Graph.Count; v++)
             {
                 if (isDirectlyConnected) // End as shortest common ancestor is found
-                    return;
+                    return shortestAncestorID;
                 if (status[v] == Color.WHITE)
                     VisitVertex(ID1, ID2, v, -1);
             }
@@ -130,6 +130,7 @@ namespace wordNet_project
                 }
                 count++;
             }
+            return shortestAncestorID;
         }
 
         int pathLength1 = 0;
@@ -229,7 +230,7 @@ namespace wordNet_project
                     }
                     if (pathsOf2[pathsOf2.Count - 1].Count > pathLength2 + 1)
                     {
-                        List<int> path = pathsOf2[pathsOf2.Count - 1];
+                        List<int> path = new List<int>(pathLength2 + 1);
                         while (path.Count > pathLength2 + 1)
                             path.RemoveAt(path.Count - 1);
                         pathsOf2.Add(path);

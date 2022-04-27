@@ -25,8 +25,8 @@ namespace wordNet_project
 
             #region testing SCA
             ShortestCommAncestor SCA = new ShortestCommAncestor(New_Graph.Graph);
-            SCA.FindSCA(0, 9);
-            Console.WriteLine("SCA = " + SCA.shortestAncestorID);
+            int sca = SCA.getSCA(0, 9);
+            Console.WriteLine("SCA = " + sca);
             Console.WriteLine("Length = " + SCA.shortestLength);
             foreach (int vertex in SCA.shortestPath)
             {
