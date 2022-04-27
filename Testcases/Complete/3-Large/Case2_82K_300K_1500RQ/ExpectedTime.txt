@@ -1,3 +1,0 @@
-Construct Wordnet ~= no time (1 sec)
-Relation Queries ~= 3.5 minutes 
-outcase detection ~= 1 minute

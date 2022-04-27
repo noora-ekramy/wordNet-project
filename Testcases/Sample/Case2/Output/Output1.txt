@@ -1,4 +1,0 @@
-2,h
-1,b
-1,h
-2,b OR d OR e OR f OR g OR h

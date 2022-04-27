@@ -1,3 +1,0 @@
-Constuct Wordnet ~= no time
-Relation Queries ~= 6 minutes
-Outcast Queries ~= 2.15 min
