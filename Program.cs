@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
+using System.Diagnostics;
+
 namespace wordNet_project
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             #region testing Graph constructors
             
@@ -74,6 +77,9 @@ namespace wordNet_project
             List<string> Maping_AnswerFor1 = new List<string>();
             Maping_AnswerFor1 = MappingSynsetsIDToNouns.Mapping_SynsetsID_To_Nouns( New_Graph.Synsets, 1);
             #endregion
+
+            TestWordNetProject testProject = new TestWordNetProject();
+            testProject.Test();
 
 
         }
