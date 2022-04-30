@@ -52,16 +52,16 @@ namespace wordNet_project
             Console.WriteLine("Running TestCase 1");
 
             List<string> synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File("C:\\Users\\User\\OneDrive\\Desktop\\Algorithm Project\\Testcases\\Sample\\Case1\\Input\\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File("Testcases\\Sample\\Case1\\Input\\1synsets.txt");
             
             List<string> hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File("C:\\Users\\User\\OneDrive\\Desktop\\Algorithm Project\\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File("Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
             
             List<string> relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File("C:\\Users\\User\\OneDrive\\Desktop\\Algorithm Project\\Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File("Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
             
             List<string> outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File("C:\\Users\\User\\OneDrive\\Desktop\\Algorithm Project\\Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File("Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
 
 
             Console.WriteLine("Complete Test Case 1");
