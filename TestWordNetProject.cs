@@ -352,6 +352,7 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running case1_100_100.................");
             //loading data from files
+            //---------------------------------------------------------
             List<string> synsets = new List<string>();
             synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
 
