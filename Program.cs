@@ -10,12 +10,13 @@ namespace wordNet_project
     {
         public static void Main(string[] args)
         {
+     /*
             #region testing Graph constructors
             
             List<string> lines = new List<string>();
-            lines = ReadFromFile.Read_From_File("C:\\Users\\User\\OneDrive\\Desktop\\Testcases\\Sample\\Case1\\Input\\1synsets.txt");
+            lines = ReadFromFile.Read_From_File("\\Testcases\\Sample\\Case1\\Input\\1synsets.txt");
             List<string> lines1 = new List<string>();
-            lines1 = ReadFromFile.Read_From_File("C:\\Users\\User\\OneDrive\\Desktop\\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
+            lines1 = ReadFromFile.Read_From_File("\\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
             Graph_construction New_Graph = new Graph_construction(lines, lines1);
             #endregion
 
@@ -27,7 +28,7 @@ namespace wordNet_project
             #region testing Graph Construction for Efficient SCA
             Graph_Construction_For_Efficient_SCA New_Graph_E = new Graph_Construction_For_Efficient_SCA(lines, lines1);
             #endregion
-
+   
             #region test Efficient SCA
             List<string> s = new List<string>
             {
@@ -77,6 +78,7 @@ namespace wordNet_project
             List<string> Maping_AnswerFor1 = new List<string>();
             Maping_AnswerFor1 = MappingSynsetsIDToNouns.Mapping_SynsetsID_To_Nouns( New_Graph.Synsets, 1);
             #endregion
+   */
 
             TestWordNetProject testProject = new TestWordNetProject();
             testProject.Test();

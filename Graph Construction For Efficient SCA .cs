@@ -15,7 +15,7 @@ namespace wordNet_project
             this.Words = new Dictionary<string, List<int>>();
             this.Synsets = new List<List<string>>();
             this.Graph = new List<List<int>>(Synsets_Input.Count);
-            for (int i = 0; i < Synsets_Input.Count; i++)
+            for(int i = 0; i < Synsets_Input.Count; i++)
             {
                 Graph.Add(new List<int> { });
             }
@@ -25,7 +25,7 @@ namespace wordNet_project
         public void parse_synset_input(List<string> Synsets_Input)
         {
             //loop through all synsets
-            foreach (string i in Synsets_Input)
+            foreach(string i in Synsets_Input)
             {
                 List<string> Current_Synset_Words = new List<string>();
                 string[] Splited_Line = i.Split(',');
@@ -33,25 +33,34 @@ namespace wordNet_project
                 Splited_Line = Splited_Line[1].Split(" ");
 
                 // loop trough the senset words
-                foreach (string j in Splited_Line)
+                foreach(string j in Splited_Line)
                 {
-                    string[] splited_words = j.Split("_");
-                    //loop trrough all the words word
-                    foreach (string k in splited_words)
+                    if (Words.ContainsKey(j) == true)
                     {
-                        Current_Synset_Words.Add(k);
-                        if (Words.ContainsKey(k) == true)
-                        {
-                            Words[k].Add(ID);
-                        }
-                        else
-                        {
-                            Words[k] = new List<int>();
-                            Words[k].Add(ID);
-                        }
-
-
+                        Words[j].Add(ID);
                     }
+                    else
+                    {
+                        Words[j] = new List<int>();
+                        Words[j].Add(ID);
+                    }
+                    //string[] splited_words = j.Split("_");
+                    //loop trrough all the words word
+                    /* foreach(string k in splited_words)
+                     {
+                         Current_Synset_Words.Add(k);
+                         if (Words.ContainsKey(k) == true)
+                         {
+                             Words[k].Add(ID);
+                         }
+                         else
+                         {
+                             Words[k] = new List<int>();
+                             Words[k].Add(ID);
+                         }
+                    */
+
+               // }
                 }
 
                 Synsets.Add(Current_Synset_Words);
@@ -71,7 +80,7 @@ namespace wordNet_project
                     this.Root = ID;
                     continue;
                 }
-                foreach (string j in splited_line)
+                foreach(string j in splited_line)
                 {
                     if (int.Parse(j) == ID) continue;
                     Graph[ID].Add(int.Parse(j));
