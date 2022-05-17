@@ -339,7 +339,7 @@ namespace wordNet_project
         #region Complete Test
         public static void CompleteTest()
         {
-           // CompletTest_using_SCA();
+            CompletTest_using_SCA();
             CompletTest_using_Efficient_SCA();
             
         }
@@ -405,7 +405,7 @@ namespace wordNet_project
             #endregion
 
             #endregion
-            Console.WriteLine("Medium");
+            Console.WriteLine("\n\n\nMedium");
             #region Medium
 
             #region Case1_10000_5000
@@ -459,7 +459,7 @@ namespace wordNet_project
             #endregion
 
             #endregion
-            Console.WriteLine("Larg");
+            Console.WriteLine("\n\n\nLarg");
             #region Larg
 
             #region Case1_82K_100K_5000RQ
@@ -596,7 +596,7 @@ namespace wordNet_project
             #endregion
 
             #endregion
-            Console.WriteLine("Medium");
+            Console.WriteLine("\n\n\nMedium");
             #region Medium
             
             #region Case1_10000_5000
@@ -650,7 +650,7 @@ namespace wordNet_project
             #endregion
 
             #endregion
-            Console.WriteLine("Larg");
+            Console.WriteLine("\n\n\nLarg");
             #region Larg
 
             #region Case1_82K_100K_5000RQ
@@ -925,6 +925,7 @@ namespace wordNet_project
                     // break;
                 }
             }
+            
             if (isoutcastQueries)
             {
                 int cases_type_2 = int.Parse(outcastQueries[0]);
@@ -961,13 +962,13 @@ namespace wordNet_project
             Graph_Construction_For_Efficient_SCA test_Graph = new Graph_Construction_For_Efficient_SCA(synsets, hypernyms);
 
             int cases_type_1 = int.Parse(relationQueries[0]);
+            Stopwatch sw = Stopwatch.StartNew();
 
             for (int i = 1; i <= cases_type_1; i++)
             {
                 string[] Splited_Line = relationQueries[i].Split(',');
                 string[] output_one_line = Output1[i - 1].Split(',');
                 int _dis = 0, _SCA_ID = 0;
-
                 Distans_And_SCA_Efficient(ref _dis, ref _SCA_ID, Splited_Line[0], Splited_Line[1], test_Graph);
                 bool fnd = false;
                 string[] output_simi_line = output_one_line[1].Split(" ");
@@ -988,8 +989,12 @@ namespace wordNet_project
                     // break;
                 }
             }
+            Console.WriteLine("time taken to run " + TestcaseName + " Distans Queries in ms : " + sw.ElapsedMilliseconds);
+
             if (isoutcastQueries)
             {
+                sw = Stopwatch.StartNew();
+
                 int cases_type_2 = int.Parse(outcastQueries[0]);
                 for (int i = 1; i < cases_type_2; i++)
                 {
@@ -998,6 +1003,8 @@ namespace wordNet_project
                     bool cast_FND = false;
                     string s_word = "";
                     outcastQueries_Efficient(ref s_word, Splited_Line, test_Graph);
+
+
                     foreach (string l in output_one_line)
                         if (l == s_word)
                             cast_FND = true;
@@ -1012,6 +1019,8 @@ namespace wordNet_project
                         // break;
                     }
                 }
+                Console.WriteLine("time taken to run " + TestcaseName + " outcastQueries Queries in ms : " + sw.ElapsedMilliseconds);
+
             }
             return flag;
 
@@ -1024,7 +1033,7 @@ String TestcaseName)
             Graph_Construction_For_Efficient_SCA test_Graph = new Graph_Construction_For_Efficient_SCA(synsets, hypernyms);
 
             int cases_type_1 = int.Parse(relationQueries[0]);
-
+            Stopwatch sw = Stopwatch.StartNew();
             for (int i = 1; i <= cases_type_1; i++)
             {
                 string[] Splited_Line = relationQueries[i].Split(',');
@@ -1051,8 +1060,12 @@ String TestcaseName)
                     // break;
                 }
             }
+            Console.WriteLine("time taken to run " + TestcaseName + " Distans Queries in ms : " + sw.ElapsedMilliseconds);
+
             if (isoutcastQueries)
             {
+                sw = Stopwatch.StartNew();
+
                 int cases_type_2 = int.Parse(outcastQueries[0]);
                 for (int i = 1; i < cases_type_2; i++)
                 {
@@ -1076,6 +1089,8 @@ String TestcaseName)
                     }
                 }
             }
+            Console.WriteLine("time taken to run " + TestcaseName + " outcastQueries Queries in ms : " + sw.ElapsedMilliseconds);
+
             return flag;
 
         }

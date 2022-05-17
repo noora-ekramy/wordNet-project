@@ -59,6 +59,7 @@ namespace wordNet_project
         {
             int min_dis = 1000000;
             int node = -1;
+           
             for(int i = 0; i < BFS_list.Count; i++ )
             {
                 for(int j =0; j < Graph[BFS_list[i].name].Count; j++)
@@ -72,6 +73,7 @@ namespace wordNet_project
                             Current_Node.chiled = BFS_list[i].chiled;
                             Current_Node.dis=Math.Min( BFS_list[i].dis+1, BFS_list_DIC[Graph[BFS_list[i].name][j]].dis);
                             BFS_list.Add(Current_Node);
+                            
                         }
                         else
                         {
@@ -82,10 +84,16 @@ namespace wordNet_project
                                 min_dis = Distance;
                                 node = Graph[BFS_list[i].name][j];
                             }
+                            parent_info Current_Node;
+                            Current_Node.name = Graph[BFS_list[i].name][j];
+                            Current_Node.chiled = BFS_list[i].chiled;
+                            Current_Node.dis = BFS_list[i].dis + 1;
+                            BFS_list.Add(Current_Node);
                         }
                     }
                     else
                     {
+                      
                         dic_struct cur_dic;
                         cur_dic.chiled = BFS_list[i].chiled;
                         cur_dic.dis = BFS_list[i].dis + 1;
@@ -95,6 +103,7 @@ namespace wordNet_project
                         Current_Node.chiled = BFS_list[i].chiled;
                         Current_Node.dis = BFS_list[i].dis + 1;
                         BFS_list.Add(Current_Node);
+
 
                     }
                     
