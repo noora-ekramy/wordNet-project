@@ -63,7 +63,6 @@ namespace wordNet_project
 
             List<int> shortestPath1 = new List<int>();
             List<int> shortestPath2 = new List<int>();
-            int minPathLen = int.MaxValue;
 
             for (int i = 0; i < commonPaths1.Count; i++)
             {
