@@ -11,15 +11,30 @@ namespace wordNet_project
         {
             public int name;
             public int chiled;
+            public int dis;
         }
-        public static int Efficient_SCA_between_Two_Nouns(string noun_W, string noun_V , List<List<int>> Graph ,
+        public struct dic_struct
+        {
+            public int chiled;
+            public int dis;
+        }
+        public int Distance = 0;
+        public int Efficient_SCA_between_Two_Nouns(string noun_W, string noun_V , List<List<int>> Graph ,
             Dictionary<string, List<int>> Words)
         {
             #region initialization
-            Dictionary<int, int> BFS_list_DIC = new Dictionary<int, int>();
+            Dictionary<int, dic_struct> BFS_list_DIC = new Dictionary<int, dic_struct>();
             List<parent_info> BFS_list = new List<parent_info>();
             List<int> synsets_W = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs(Words,noun_W);
             List<int> synsets_V = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs(Words, noun_V);
+            for(int i = 0; i < synsets_W.Count; i++ )
+                for(int j = 0; j < synsets_V.Count; j++ )
+                {
+                    if(synsets_W[i] == synsets_V[j])
+                    {
+                        return synsets_W[i];
+                    }
+                }
 
             #region set initial values to BFS_list and BFS_list_DIC
 
@@ -27,8 +42,12 @@ namespace wordNet_project
             {
                 parent_info W;
                 W.name = synsets_W[i];
-                W.chiled = synsets_W[i];
-                BFS_list_DIC[synsets_W[i]] = synsets_W[i];
+                W.chiled = 0;
+                W.dis = 0;
+                dic_struct W_d;
+                W_d.chiled = 0;
+                W_d.dis = 0;
+                BFS_list_DIC[synsets_W[i]] = W_d;
                 BFS_list.Add(W);
             }
             
@@ -36,8 +55,12 @@ namespace wordNet_project
             {
                 parent_info V;
                 V.name = synsets_V[i];
-                V.chiled = synsets_V[i];
-                BFS_list_DIC[synsets_V[i]] = synsets_V[i];
+                V.chiled = 1;
+                V.dis = 0;
+                dic_struct V_d;
+                V_d.chiled = 1;
+                V_d.dis = 0;
+                BFS_list_DIC[synsets_V[i]] = V_d;
                 BFS_list.Add(V);
             }
             
@@ -49,8 +72,11 @@ namespace wordNet_project
 
             return ans;
         }
-        public static int BFS(List<parent_info> BFS_list, List<List<int>> Graph , Dictionary<int, int> BFS_list_DIC)
+        public int BFS(List<parent_info> BFS_list, List<List<int>> Graph
+            , Dictionary<int, dic_struct> BFS_list_DIC)
         {
+            int min_dis = 1000000;
+            int node = -1;
 
             for (int i = 0; i < BFS_list.Count; i++)
             {
@@ -58,30 +84,52 @@ namespace wordNet_project
                 {
                     if (BFS_list_DIC.ContainsKey(Graph[BFS_list[i].name][j]) == true)
                     {
-                        if (BFS_list_DIC[Graph[BFS_list[i].name][j]] == BFS_list[i].chiled)
+                        if (BFS_list_DIC[Graph[BFS_list[i].name][j]].chiled == BFS_list[i].chiled)
                         {
                             parent_info Current_Node;
                             Current_Node.name = Graph[BFS_list[i].name][j];
                             Current_Node.chiled = BFS_list[i].chiled;
+                            Current_Node.dis = Math.Min(BFS_list[i].dis + 1, BFS_list_DIC[Graph[BFS_list[i].name][j]].dis);
+                            BFS_list.Add(Current_Node);
+
                         }
                         else
                         {
-                            return Graph[BFS_list[i].name][j];
+
+                            Distance = BFS_list[i].dis + BFS_list_DIC[Graph[BFS_list[i].name][j]].dis + 1;
+                            if (Distance < min_dis)
+                            {
+                                min_dis = Distance;
+                                node = Graph[BFS_list[i].name][j];
+                            }
+                            parent_info Current_Node;
+                            Current_Node.name = Graph[BFS_list[i].name][j];
+                            Current_Node.chiled = BFS_list[i].chiled;
+                            Current_Node.dis = BFS_list[i].dis + 1;
+                            BFS_list.Add(Current_Node);
                         }
                     }
                     else
                     {
-                        BFS_list_DIC[Graph[BFS_list[i].name][j]] = BFS_list[i].chiled;
+
+                        dic_struct cur_dic;
+                        cur_dic.chiled = BFS_list[i].chiled;
+                        cur_dic.dis = BFS_list[i].dis + 1;
+                        BFS_list_DIC[Graph[BFS_list[i].name][j]] = cur_dic;
                         parent_info Current_Node;
                         Current_Node.name = Graph[BFS_list[i].name][j];
                         Current_Node.chiled = BFS_list[i].chiled;
+                        Current_Node.dis = BFS_list[i].dis + 1;
                         BFS_list.Add(Current_Node);
+
 
                     }
 
                 }
             }
-            return -1;
+            Distance = min_dis;
+            return node;
         }
+
     }
 }

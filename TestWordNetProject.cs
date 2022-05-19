@@ -48,7 +48,7 @@ namespace wordNet_project
         public static bool SampleTest()
         {
            
-            bool flag = false;
+            bool flag = true;
             //----------------------------------------------------------
             #region Case1
             Console.WriteLine("Running TestCase 1.................");
@@ -75,9 +75,13 @@ namespace wordNet_project
             Console.WriteLine("Test Case 1 Completed :)");
             Console.WriteLine("------------------------------------");
 
+
             #endregion
             //------------------------------------------------------
-
+            if (flag == false)
+            {
+                return false;
+            }
             #region Case 2
             Console.WriteLine("Running TestCase 2............");
             //loading data from files
@@ -95,6 +99,10 @@ namespace wordNet_project
             Console.WriteLine("Test Case 2 Completed :)");
             Console.WriteLine("------------------------------------");
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
             //-------------------------------------------------------------
             #region Case 3
             Console.WriteLine("Running TestCase 3............");
@@ -116,6 +124,10 @@ namespace wordNet_project
             Console.WriteLine("------------------------------------");
 
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
             //-------------------------------------------------
             #region Case 4
             Console.WriteLine("Running TestCase 4.........");
@@ -138,6 +150,10 @@ namespace wordNet_project
             Console.WriteLine("Test Case 4 Completed :)");
             Console.WriteLine("------------------------------------");
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
 
             #region Special Cases
             #region 2 commons case (Bidirectional)
@@ -161,6 +177,10 @@ namespace wordNet_project
             Console.WriteLine("------------------------------------");
 
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
             #region Many-Many (Noun in more than 1 synset)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
@@ -183,7 +203,10 @@ namespace wordNet_project
 
             #endregion
 
-
+            if (flag == false)
+            {
+                return false;
+            }
             #endregion
 
             return flag;
@@ -191,7 +214,7 @@ namespace wordNet_project
         public static bool SampleTest_using_Efficient_SCA()
         {
            
-            bool flag = false;
+            bool flag = true;
             //----------------------------------------------------------
             #region Case1
             Console.WriteLine("Running TestCase 1.................");
@@ -222,6 +245,10 @@ namespace wordNet_project
             Console.WriteLine("------------------------------------");
 
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
             //------------------------------------------------------
 
             #region Case 2
@@ -242,6 +269,10 @@ namespace wordNet_project
             Console.WriteLine("Test Case 2 Completed :)");
             Console.WriteLine("------------------------------------");
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
             //-------------------------------------------------------------
             #region Case 3
             Console.WriteLine("Running TestCase 3............");
@@ -264,6 +295,10 @@ namespace wordNet_project
             Console.WriteLine("------------------------------------");
 
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
             //-------------------------------------------------
             #region Case 4
             Console.WriteLine("Running TestCase 4.........");
@@ -286,6 +321,10 @@ namespace wordNet_project
             Console.WriteLine("Test Case 4 Completed :)");
             Console.WriteLine("------------------------------------");
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
 
             #region Special Cases
             #region 2 commons case (Bidirectional)
@@ -308,6 +347,10 @@ namespace wordNet_project
             Console.WriteLine("------------------------------------");
 
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
             #region Many-Many (Noun in more than 1 synset)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
@@ -328,7 +371,181 @@ namespace wordNet_project
             Console.WriteLine("------------------------------------");
 
             #endregion
+            if (flag == false)
+            {
+                return false;
+            }
 
+
+            #endregion
+
+            return flag;
+        }
+
+        public static bool SampleTest_using_Efficient_Distance_and_SCA_between_Two_Nouns()
+        {
+
+            bool flag = true;
+            //----------------------------------------------------------
+            #region Case1
+            Console.WriteLine("Running TestCase 1.................");
+            //loading data from files
+            List<string> synsets = new List<string>();
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case1\Input\1synsets.txt");
+
+            List<string> hypernyms = new List<string>();
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
+
+            List<string> relationQueries = new List<string>();
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
+
+            List<string> outcastQueries = new List<string>();
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
+            // loading output data from files
+            List<string> Output1 = new List<string>();
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output1.txt");
+
+            List<string> Output2 = new List<string>();
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output2.txt");
+            //----------------------------------------------------------
+
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase1");
+
+
+            Console.WriteLine("Test Case 1 Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            if (flag == false)
+            {
+                return false;
+            }
+            //------------------------------------------------------
+
+            #region Case 2
+            Console.WriteLine("Running TestCase 2............");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case2\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\3RelationsQueries.txt");
+
+
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Output\\Output1.txt");
+            //---------------------------------------------------
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase2");
+
+            Console.WriteLine("Test Case 2 Completed :)");
+            Console.WriteLine("------------------------------------");
+            #endregion
+            if (flag == false)
+            {
+                return false;
+            }
+            //-------------------------------------------------------------
+            #region Case 3
+            Console.WriteLine("Running TestCase 3............");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case3\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\4OutcastQueries.txt");
+
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output2.txt");
+
+            //---------------------------------------------------
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase3");
+
+            Console.WriteLine("Test Case 3 Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            if (flag == false)
+            {
+                return false;
+            }
+            //-------------------------------------------------
+            #region Case 4
+            Console.WriteLine("Running TestCase 4.........");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case4\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\4OutcastQueries.txt");
+
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output2.txt");
+
+
+            //---------------------------------------------------
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase4");
+
+            Console.WriteLine("Test Case 4 Completed :)");
+            Console.WriteLine("------------------------------------");
+            #endregion
+            if (flag == false)
+            {
+                return false;
+            }
+
+            #region Special Cases
+            #region 2 commons case (Bidirectional)
+            Console.WriteLine("Running Bidirectional TestCase .........");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\2 commons case (Bidirectional)\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\3RelationsQueries.txt");
+
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Output\\Output1.txt");
+
+            //---------------------------------------------------
+
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Bidirectional TestCase");
+
+            Console.WriteLine("Test Case  Many-Many (Noun in more than 1 synset) TestCase Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            if (flag == false)
+            {
+                return false;
+            }
+            #region Many-Many (Noun in more than 1 synset)
+            Console.WriteLine("Running Bidirectional TestCase .........");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\Many-Many (Noun in more than 1 synset)\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\3RelationsQueries.txt");
+
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
+
+            //---------------------------------------------------
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, " Many-Many (Noun in more than 1 synset) TestCase");
+
+
+            Console.WriteLine("Test Case  Many-Many (Noun in more than 1 synset) TestCase Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            if (flag == false)
+            {
+                return false;
+            }
 
             #endregion
 
@@ -339,9 +556,21 @@ namespace wordNet_project
         #region Complete Test
         public static void CompleteTest()
         {
-            CompletTest_using_SCA();
-            CompletTest_using_Efficient_SCA();
-            
+            long a = 0, b = 0, c=0;
+            Stopwatch sw = Stopwatch.StartNew();
+           CompletTest_using_SCA();
+            a = sw.ElapsedMilliseconds;
+            sw = Stopwatch.StartNew();
+           CompletTest_using_Efficient_SCA();
+            b = sw.ElapsedMilliseconds ;
+            sw = Stopwatch.StartNew();
+            CompletTest_using_Efficient_Distance_and_SCA_between_Two_Nouns();
+            c = sw.ElapsedMilliseconds;
+            Console.WriteLine("time taken by SCA                                          : " + a);
+            Console.WriteLine("time taken by Efficient SCA                                : " + b);
+            Console.WriteLine("time taken by Efficient Distance and SCA between Two Nouns : " + c);
+
+
         }
         public static void CompletTest_using_SCA()
         {
@@ -725,6 +954,199 @@ namespace wordNet_project
          
             Console.WriteLine("Complet testcases Completed");
         }
+        public static void CompletTest_using_Efficient_Distance_and_SCA_between_Two_Nouns()
+        {
+            Console.WriteLine("\n\n\nRunning Complet testcases................ ");
+            #region Small
+            #region case1_100_100
+            // bool flag = false;
+            //----------------------------------------------------------
+            Console.WriteLine("Running case1_100_100.................");
+            //loading data from files
+            List<string> synsets = new List<string>();
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
+
+            List<string> hypernyms = new List<string>();
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\2hypernyms.txt");
+
+            List<string> relationQueries = new List<string>();
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\3RelationsQueries.txt");
+
+            List<string> outcastQueries = new List<string>();
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\4OutcastQueries.txt");
+            // loading output data from files
+            List<string> Output1 = new List<string>();
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output1.txt");
+
+            List<string> Output2 = new List<string>();
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
+            //----------------------------------------------------------
+            bool flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case1_100_100");
+
+            Console.WriteLine("case1_100_100 Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            #region case2_1000_500
+            Console.WriteLine("Running case2_1000_500.................");
+            //loading data from files
+            synsets = new List<string>();
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case2_1000_500\Input\1synsets.txt");
+
+            hypernyms = new List<string>();
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\2hypernyms.txt");
+
+            relationQueries = new List<string>();
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\3RelationsQueries.txt");
+
+            outcastQueries = new List<string>();
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\4OutcastQueries.txt");
+            // loading output data from files
+            Output1 = new List<string>();
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output1.txt");
+
+            Output2 = new List<string>();
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
+            //----------------------------------------------------------
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case2_1000_500");
+
+            Console.WriteLine("case2_1000_500 Completed :)");
+            Console.WriteLine("------------------------------------");
+            #endregion
+
+            #endregion
+            Console.WriteLine("\n\n\nMedium");
+            #region Medium
+
+            #region Case1_10000_5000
+            // bool flag = false;
+            //----------------------------------------------------------
+            Console.WriteLine("Running Medium Case1_10000_5000.................");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case1_10000_5000\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\3RelationsQueries.txt");
+
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\4OutcastQueries.txt");
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output1.txt");
+
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
+            //----------------------------------------------------------
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_10000_5000");
+
+            Console.WriteLine("Case1_10000_5000 Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            #region Case2_10000_50000
+            Console.WriteLine("Running Case2_10000_50000.................");
+            //loading data from files
+            synsets = new List<string>();
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case2_10000_50000\Input\1synsets.txt");
+
+            hypernyms = new List<string>();
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\2hypernyms.txt");
+
+            relationQueries = new List<string>();
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\3RelationsQueries.txt");
+
+            outcastQueries = new List<string>();
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\4OutcastQueries.txt");
+            // loading output data from files
+            Output1 = new List<string>();
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output1.txt");
+
+            Output2 = new List<string>();
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
+            //----------------------------------------------------------
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_10000_50000");
+
+            Console.WriteLine("Case2_10000_50000 Completed :)");
+            Console.WriteLine("------------------------------------");
+            #endregion
+
+            #endregion
+
+            
+            Console.WriteLine("\n\n\nLarg");
+            #region Larg
+
+            #region Case1_82K_100K_5000RQ
+            // bool flag = false;
+            //----------------------------------------------------------
+            Console.WriteLine("Running Case1_82K_100K_5000RQ.................");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case1_82K_100K_5000RQ\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\3RelationsQueries.txt");
+
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\4OutcastQueries.txt");
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output1.txt");
+
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
+            //----------------------------------------------------------
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_82K_100K_5000RQ");
+
+            Console.WriteLine("Case1_82K_100K_5000RQ Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            #region Case2_82K_300K_1500RQ
+            // bool flag = false;
+            //----------------------------------------------------------
+            Console.WriteLine("Running Case2_82K_300K_1500RQ.................");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case2_82K_300K_1500RQ\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\3RelationsQueries.txt");
+
+            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\4OutcastQueries.txt");
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output1.txt");
+
+            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
+            //----------------------------------------------------------
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_82K_300K_1500RQ");
+
+            Console.WriteLine("Case2_82K_300K_1500RQ Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            #region Case3_82K_300K_5000RQ
+            // bool flag = false;
+            //----------------------------------------------------------
+            Console.WriteLine("Running Case3_82K_300K_5000RQ.................");
+            //loading data from files
+            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case3_82K_300K_5000RQ\Input\1synsets.txt");
+
+            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\2hypernyms.txt");
+
+            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\3RelationsQueries.txt");
+
+            // loading output data from files
+            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\\Output\\Output1.txt");
+
+
+            //----------------------------------------------------------
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case3_82K_300K_5000RQ");
+
+            Console.WriteLine("Case3_82K_300K_5000RQ Completed :)");
+            Console.WriteLine("------------------------------------");
+
+            #endregion
+            #endregion
+           
+
+            Console.WriteLine("Complet testcases Completed");
+        }
 
         #endregion
 
@@ -801,6 +1223,33 @@ namespace wordNet_project
             }
             a = word;
            
+        }
+        public static void outcastQueries_Efficient_Distance_and_SCA_between_Two_Nouns(ref string a, string[] words, Graph_Construction_For_Efficient_SCA Graph)
+        {
+            int max_dis = 0;
+            string word = "";
+            foreach (string i in words)
+            {
+                int all_dis = 0;
+                int Id = 0;
+                foreach (string j in words)
+                {
+                  
+                    Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns EDSN = new Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns();
+                     EDSN.Efficient_SCA_between_Two_Nouns(i, j, Graph.Graph, Graph.Words);
+                    int dis = EDSN.Distance;
+                    all_dis += dis;
+
+
+                }
+                if (all_dis > max_dis)
+                {
+                    word = i;
+                    max_dis = all_dis;
+                }
+            }
+            a = word;
+
         }
         public static void outcastQueries_Un_Efficient(ref string a, string[] words , Graph_Construction_For_Efficient_SCA Graph)
         {
@@ -936,6 +1385,71 @@ namespace wordNet_project
                     bool cast_FND = false;
                     string s_word = "";
                     outcastQueries_Efficient(ref s_word, Splited_Line, test_Graph);
+                    foreach (string l in output_one_line)
+                        if (l == s_word)
+                            cast_FND = true;
+
+
+
+
+                    if (cast_FND == false)
+                    {
+                        Console.WriteLine("Wrong answer at test 1 number :" + i + "  outcastQueries ");
+                        flag = false;
+                        // break;
+                    }
+                }
+            }
+            return flag;
+
+        }
+        public static bool Testing_Efficient_Distance_and_SCA_between_Two_Nouns(bool isoutcastQueries, List<string> synsets, List<string> hypernyms,
+ List<string> relationQueries, List<string> outcastQueries, List<string> Output1, List<string> Output2,
+ String TestcaseName)
+        {
+            bool flag = true;
+            Graph_Construction_For_Efficient_SCA test_Graph = new Graph_Construction_For_Efficient_SCA(synsets, hypernyms);
+
+            int cases_type_1 = int.Parse(relationQueries[0]);
+
+            for (int i = 1; i <= cases_type_1; i++)
+            {
+                string[] Splited_Line = relationQueries[i].Split(',');
+                string[] output_one_line = Output1[i - 1].Split(',');
+                int _dis = 0, _SCA_ID = 0;
+
+                 Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns EDSN = new Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns();
+                _SCA_ID = EDSN.Efficient_SCA_between_Two_Nouns(Splited_Line[0], Splited_Line[1], test_Graph.Graph, test_Graph.Words);
+                _dis = EDSN.Distance; bool fnd = false;
+                string[] output_simi_line = output_one_line[1].Split(" OR ");
+                foreach (string k in output_simi_line)
+                {
+                    List<int> output_noun_synsets = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs(test_Graph.Words, k);
+                    foreach (int j in output_noun_synsets)
+                    {
+
+                        if (_SCA_ID == j) fnd = true;
+                    }
+                }
+                if (_dis != int.Parse(output_one_line[0]) || !fnd)
+                {
+                    Console.WriteLine("Wrong answer at test" + TestcaseName + "  number :" + i + "  FND_dis:" + _dis + ", E_dis:" + int.Parse(output_one_line[0]));
+                    Console.WriteLine("synset_ID:" + _SCA_ID);
+                    flag = false;
+                    // break;
+                }
+            }
+
+            if (isoutcastQueries)
+            {
+                int cases_type_2 = int.Parse(outcastQueries[0]);
+                for (int i = 1; i < cases_type_2; i++)
+                {
+                    string[] Splited_Line = outcastQueries[i].Split(',');
+                    string[] output_one_line = Output2[i - 1].Split(" OR ");
+                    bool cast_FND = false;
+                    string s_word = "";
+                    outcastQueries_Efficient_Distance_and_SCA_between_Two_Nouns(ref s_word, Splited_Line, test_Graph);
                     foreach (string l in output_one_line)
                         if (l == s_word)
                             cast_FND = true;
@@ -1095,7 +1609,76 @@ String TestcaseName)
 
         }
 
+        public static bool Testing_complet_Distance_and_SCA_between_Two_Nouns(bool isoutcastQueries, List<string> synsets, List<string> hypernyms,
+List<string> relationQueries, List<string> outcastQueries, List<string> Output1, List<string> Output2,
+String TestcaseName)
+        {
+            bool flag = true;
+            Graph_Construction_For_Efficient_SCA test_Graph = new Graph_Construction_For_Efficient_SCA(synsets, hypernyms);
 
+            int cases_type_1 = int.Parse(relationQueries[0]);
+            Stopwatch sw = Stopwatch.StartNew();
+            for (int i = 1; i <= cases_type_1; i++)
+            {
+                string[] Splited_Line = relationQueries[i].Split(',');
+                string[] output_one_line = Output1[i - 1].Split(',');
+                int _dis = 0, _SCA_ID = 0;
+                Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns EDSN = new Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns();
+                _SCA_ID=  EDSN.Efficient_SCA_between_Two_Nouns(Splited_Line[0], Splited_Line[1], test_Graph.Graph, test_Graph.Words);
+                _dis = EDSN.Distance;
+                bool fnd = false;
+                string[] output_simi_line = output_one_line[1].Split(" ");
+                foreach (string k in output_simi_line)
+                {
+                    List<int> output_noun_synsets = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs(test_Graph.Words, k);
+                    foreach (int j in output_noun_synsets)
+                    {
+
+                        if (_SCA_ID == j) fnd = true;
+                    }
+                }
+                if (_dis != int.Parse(output_one_line[0]) || !fnd)
+                {
+                    Console.WriteLine("Wrong answer at test" + TestcaseName + "  number :" + i + "  FND_dis:" + _dis + ", E_dis:" + int.Parse(output_one_line[0]));
+                    Console.WriteLine("synset_ID:" + _SCA_ID);
+                    flag = false;
+                    // break;
+                }
+            }
+            Console.WriteLine("time taken to run " + TestcaseName + " Distans Queries in ms : " + sw.ElapsedMilliseconds);
+
+            if (isoutcastQueries)
+            {
+                sw = Stopwatch.StartNew();
+
+                int cases_type_2 = int.Parse(outcastQueries[0]);
+                for (int i = 1; i < cases_type_2; i++)
+                {
+                    string[] Splited_Line = outcastQueries[i].Split(',');
+                    string[] output_one_line = Output2[i - 1].Split(" ");
+                    bool cast_FND = false;
+                    string s_word = "";
+                    outcastQueries_Efficient_Distance_and_SCA_between_Two_Nouns(ref s_word, Splited_Line, test_Graph);
+                    foreach (string l in output_one_line)
+                        if (l == s_word)
+                            cast_FND = true;
+
+
+
+
+                    if (cast_FND == false)
+                    {
+                        Console.WriteLine("Wrong answer at test 1 number :" + i + "  outcastQueries ");
+                        flag = false;
+                        // break;
+                    }
+                }
+            }
+            Console.WriteLine("time taken to run " + TestcaseName + " outcastQueries Queries in ms : " + sw.ElapsedMilliseconds);
+
+            return flag;
+
+        }
     }
 
 
