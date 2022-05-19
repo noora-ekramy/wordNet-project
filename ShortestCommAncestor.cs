@@ -11,8 +11,7 @@ namespace wordNet_project
         public int shortestLength;
         public List<int> shortestPath;
         public List<List<int>> Graph;
-        private List<List<int>> pathsOf1;
-        private List<List<int>> pathsOf2;
+        private List<int> pathRecorded;
         private List<List<int>> commonPaths1;
         private List<List<int>> commonPaths2;
         private List<int> commonParents;
@@ -24,7 +23,6 @@ namespace wordNet_project
             GREEN, // For input id1
             BLUE, // For input id2
             BLACK, // For explored input node
-            RED // For common
         }
 
         public ShortestCommAncestor(List<List<int>> Graph)
@@ -33,73 +31,71 @@ namespace wordNet_project
         }
 
         // Uses DFS (not optimally)
-        public int getSCA(int ID1, int ID2)
+        public int getSCA(int ID1, int ID2) // Total = O(M^2*C)
         {
             shortestAncestorID = -1;
             shortestLength = int.MaxValue;
             shortestPath = new List<int>();
             commonParents = new List<int>();
-            pathsOf1 = new List<List<int>>();
+            pathRecorded = new List<int>();
             commonPaths1 = new List<List<int>>();
             commonPaths2 = new List<List<int>>();
-            pathsOf2 = new List<List<int>>();
             status = new Color[Graph.Count];
 
             // Return length 0 as both input nodes are the same one
-            if (ID1 == ID2)
+            if (ID1 == ID2) // O(1)
             {
                 shortestAncestorID = ID1;
                 shortestPath.Add(ID1);
                 shortestLength = 0;
                 return ID1;
             }
-            // Initialize all vertices
-            for (int i = 0; i < Graph.Count; i++)
-                status[i] = Color.WHITE;
 
-            VisitVertexA(ID1, ID2, ID1, ID1);
-            VisitVertexA(ID1, ID2, ID2, ID2);
-            VisitVertexA(ID1, ID2, ID1, ID1);
+            // First DFS visit colors all ancestors of first synset
+            VisitVertexA(ID1, ID2, ID1, ID1); // O(M^2*C)
+            pathRecorded = new List<int>();
+            // Second DFS visit colors all ancestors of second synset and detects it's common paths and ancestors
+            VisitVertexA(ID1, ID2, ID2, ID2); // O(M^2*C)
+            pathRecorded = new List<int>();
+            // Third DFS visit detects common paths of first synset
+            VisitVertexA(ID1, ID2, ID1, ID1); // O(M^2*C)
+            pathRecorded = new List<int>();
 
             List<int> shortestPath1 = new List<int>();
             List<int> shortestPath2 = new List<int>();
 
-            for (int i = 0; i < commonPaths1.Count; i++)
+            // Joins and finds minimum path from all common paths
+            for (int i = 0; i < commonPaths1.Count; i++) // O(M), Total = O(M^2)
             {
                 commonPaths1[i].RemoveAt(commonPaths1[i].Count - 1);
-                commonPaths2[i].Reverse();
+                commonPaths2[i].Reverse(); // O(M)
 
                 if (commonPaths1[i].Count + commonPaths2[i].Count < shortestPath.Count || shortestPath.Count == 0)
                 {
                     shortestPath = new List<int>(commonPaths1[i].Count + commonPaths2.Count);
-                    shortestPath.AddRange(commonPaths1[i]);
-                    shortestPath.AddRange(commonPaths2[i]);
+                    shortestPath.AddRange(commonPaths1[i]); // O(M)
+                    shortestPath.AddRange(commonPaths2[i]); // O(M)
                     shortestAncestorID = commonParents[i];
                     shortestLength = shortestPath.Count - 1;
                 }
 
-                commonPaths2[i].Reverse();
+                commonPaths2[i].Reverse(); // O(M)
             }
-
             return shortestAncestorID;
         }
 
         
         // Recursive function to explore vertices
-        void VisitVertexA(int ID1, int ID2, int v, int searchID)
+        void VisitVertexA(int ID1, int ID2, int v, int searchID) // O(M), Total = O(M^2*C)
         {
             List<int> curPath = new List<int>();
-            if (v == ID1)
+            if (v == ID1 && searchID == ID1) // O(1)
             {
-                List<int> path = new List<int>();
-                path.Add(v);
-                pathsOf1.Add(path);
+                pathRecorded.Add(v);
             }
-            if (v == ID2)
+            else if (v == ID2 && searchID == ID2) // O(1)
             {
-                List<int> path = new List<int>();
-                path.Add(v);
-                pathsOf2.Add(path);
+                pathRecorded.Add(v);
             }
 
             // Adds current vertex to current ID1 path
@@ -108,8 +104,9 @@ namespace wordNet_project
                 if (status[v] == Color.BLUE || status[v] == Color.BLACK) // Checks if vertex is a common ancestor
                 {
                     List<int> path = new List<int>();
-                    path.AddRange(pathsOf1[pathsOf1.Count - 1]);
+                    path.AddRange(pathRecorded); // O(M)
 
+                    // Detects if common parent is already recorded
                     if (!commonParents.Contains(v))
                     {
                         commonParents.Add(v);
@@ -127,7 +124,7 @@ namespace wordNet_project
                 }
                 else
                     status[v] = Color.GREEN;
-                curPath.AddRange(pathsOf1[pathsOf1.Count - 1]);
+                curPath.AddRange(pathRecorded); // O(M)
             }
             // Adds current vertex to current ID2 path
             if (searchID == ID2)
@@ -135,9 +132,10 @@ namespace wordNet_project
                 if (status[v] == Color.GREEN || status[v] == Color.BLACK) // Checks if vertex is a common ancestor
                 {
                     List<int> path = new List<int>();
-                    path.AddRange(pathsOf2[pathsOf2.Count - 1]);
-                    
-                    if (!commonParents.Contains(v))
+                    path.AddRange(pathRecorded); // O(M)
+
+                    // Detects if common parent is already recorded
+                    if (!commonParents.Contains(v)) // O(M)
                     {
                         commonPaths2.Add(path);
                         commonPaths1.Add(new List<int>());
@@ -152,23 +150,15 @@ namespace wordNet_project
                 }
                 else
                     status[v] = Color.BLUE;
-                curPath.AddRange(pathsOf2[pathsOf2.Count - 1]);
+                curPath.AddRange(pathRecorded); // O(M)
             }
-            
-            foreach (int vertex in Graph[v])
+            foreach (int vertex in Graph[v]) // O(C), Total O(M*C)
             {
                 curPath.Add(vertex);
-                
-                if (searchID == ID1) // If exploring child vertex of ID1 then add new path for ID2
-                {
-                    pathsOf1.Add(new List<int>());
-                    pathsOf1[pathsOf1.Count - 1].AddRange(curPath);
-                }
-                if (searchID == ID2) // If exploring child vertex of ID2 then add new path for ID2
-                {
-                    pathsOf2.Add(new List<int>());
-                    pathsOf2[pathsOf2.Count - 1].AddRange(curPath);
-                }
+
+                pathRecorded.Clear();
+                pathRecorded.AddRange(curPath); // O(M)
+
                 // Explore child vertex
                 VisitVertexA(ID1, ID2, vertex, searchID);
                 curPath.Remove(vertex);
