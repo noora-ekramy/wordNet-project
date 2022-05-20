@@ -7,9 +7,10 @@ namespace wordNet_project
 {
     class MappingNounToSynsetsIDs
     {
+        //O(1)
         public static List<int> Maping_Noun_To_SynsetsIDs( Dictionary<string, List<int>> Words , string Word)
         {
-            
+            //O(1)
             if (Words.ContainsKey(Word))
                 return Words[Word];
             else

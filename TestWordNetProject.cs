@@ -20,6 +20,7 @@ namespace wordNet_project
                 isComleted = SampleTest();
                 Console.WriteLine("\n\n\nRuning unsing Efficient SCA.......");
                 bool a = SampleTest_using_Efficient_SCA();
+                SampleTest_using_Efficient_Distance_and_SCA_between_Two_Nouns();
                 if (isComleted)
                 {
                     Console.WriteLine("Do you want to run Complete Testcases (y/n) : ");
@@ -54,22 +55,22 @@ namespace wordNet_project
             Console.WriteLine("Running TestCase 1.................");
             //loading data from files
             List<string> synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case1\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File("Testcases\\Sample\\Case1\\Input\\1synsets.txt");
 
             List<string> hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
 
             List<string> relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
 
             List<string> outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
             // loading output data from files
             List<string> Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Output\\Output1.txt");
 
             List<string> Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase1");
             Console.WriteLine("Test Case 1 Completed :)");
@@ -85,15 +86,15 @@ namespace wordNet_project
             #region Case 2
             Console.WriteLine("Running TestCase 2............");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case2\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case2\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Input\\3RelationsQueries.txt");
 
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Output\\Output1.txt");
             //---------------------------------------------------
             flag = Testing(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase2");
             Console.WriteLine("Test Case 2 Completed :)");
@@ -107,16 +108,16 @@ namespace wordNet_project
             #region Case 3
             Console.WriteLine("Running TestCase 3............");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case3\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case3\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\3RelationsQueries.txt");
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\4OutcastQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\4OutcastQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output1.txt");
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output2.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Output\\Output2.txt");
 
             //---------------------------------------------------
             flag = Testing(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase3");
@@ -132,16 +133,16 @@ namespace wordNet_project
             #region Case 4
             Console.WriteLine("Running TestCase 4.........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case4\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case4\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\3RelationsQueries.txt");
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\4OutcastQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\4OutcastQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output1.txt");
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output2.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Output\\Output2.txt");
 
 
             //---------------------------------------------------
@@ -159,14 +160,14 @@ namespace wordNet_project
             #region 2 commons case (Bidirectional)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\2 commons case (Bidirectional)\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Other special cases\2 commons case (Bidirectional)\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Output\\Output1.txt");
 
 
             //---------------------------------------------------
@@ -184,14 +185,14 @@ namespace wordNet_project
             #region Many-Many (Noun in more than 1 synset)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\Many-Many (Noun in more than 1 synset)\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Other special cases\Many-Many (Noun in more than 1 synset)\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
 
 
             //---------------------------------------------------
@@ -220,22 +221,22 @@ namespace wordNet_project
             Console.WriteLine("Running TestCase 1.................");
             //loading data from files
             List<string> synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case1\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case1\Input\1synsets.txt");
 
             List<string> hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
 
             List<string> relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
 
             List<string> outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
-            // loading output data from files
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
+            // loading output data from file
             List<string> Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Output\\Output1.txt");
 
             List<string> Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Output\\Output2.txt");
             //----------------------------------------------------------
 
             flag = Testing_Efficient(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase1");
@@ -254,15 +255,15 @@ namespace wordNet_project
             #region Case 2
             Console.WriteLine("Running TestCase 2............");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case2\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case2\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Input\\3RelationsQueries.txt");
 
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Output\\Output1.txt");
             //---------------------------------------------------
             flag = Testing_Efficient(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase2");
 
@@ -277,16 +278,16 @@ namespace wordNet_project
             #region Case 3
             Console.WriteLine("Running TestCase 3............");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case3\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case3\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\3RelationsQueries.txt");
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\4OutcastQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\4OutcastQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output1.txt");
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output2.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Output\\Output2.txt");
 
             //---------------------------------------------------
             flag = Testing_Efficient(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase3");
@@ -303,16 +304,16 @@ namespace wordNet_project
             #region Case 4
             Console.WriteLine("Running TestCase 4.........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case4\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case4\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\3RelationsQueries.txt");
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\4OutcastQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\4OutcastQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output1.txt");
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output2.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Output\\Output2.txt");
 
 
             //---------------------------------------------------
@@ -330,14 +331,14 @@ namespace wordNet_project
             #region 2 commons case (Bidirectional)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\2 commons case (Bidirectional)\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Other special cases\2 commons case (Bidirectional)\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Output\\Output1.txt");
 
             //---------------------------------------------------
 
@@ -354,14 +355,14 @@ namespace wordNet_project
             #region Many-Many (Noun in more than 1 synset)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\Many-Many (Noun in more than 1 synset)\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Other special cases\Many-Many (Noun in more than 1 synset)\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
 
             //---------------------------------------------------
             flag = Testing_Efficient(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, " Many-Many (Noun in more than 1 synset) TestCase");
@@ -391,22 +392,22 @@ namespace wordNet_project
             Console.WriteLine("Running TestCase 1.................");
             //loading data from files
             List<string> synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case1\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case1\Input\1synsets.txt");
 
             List<string> hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\2hypernyms.txt");
 
             List<string> relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\3RelationsQueries.txt");
 
             List<string> outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Input\\4OutcastQueries.txt");
             // loading output data from files
             List<string> Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Output\\Output1.txt");
 
             List<string> Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case1\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Output\\Output2.txt");
             //----------------------------------------------------------
 
             flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase1");
@@ -425,15 +426,15 @@ namespace wordNet_project
             #region Case 2
             Console.WriteLine("Running TestCase 2............");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case2\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case2\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Input\\3RelationsQueries.txt");
 
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case2\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Output\\Output1.txt");
             //---------------------------------------------------
             flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase2");
 
@@ -448,16 +449,16 @@ namespace wordNet_project
             #region Case 3
             Console.WriteLine("Running TestCase 3............");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case3\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case3\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\3RelationsQueries.txt");
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Input\\4OutcastQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Input\\4OutcastQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output1.txt");
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case3\\Output\\Output2.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Output\\Output2.txt");
 
             //---------------------------------------------------
             flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase3");
@@ -474,16 +475,16 @@ namespace wordNet_project
             #region Case 4
             Console.WriteLine("Running TestCase 4.........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Case4\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Case4\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\3RelationsQueries.txt");
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Input\\4OutcastQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\3RelationsQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Input\\4OutcastQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output1.txt");
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Case4\\Output\\Output2.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Output\\Output1.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case4\\Output\\Output2.txt");
 
 
             //---------------------------------------------------
@@ -501,14 +502,14 @@ namespace wordNet_project
             #region 2 commons case (Bidirectional)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\2 commons case (Bidirectional)\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Other special cases\2 commons case (Bidirectional)\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\2 commons case (Bidirectional)\\Output\\Output1.txt");
 
             //---------------------------------------------------
 
@@ -525,14 +526,14 @@ namespace wordNet_project
             #region Many-Many (Noun in more than 1 synset)
             Console.WriteLine("Running Bidirectional TestCase .........");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Sample\Other special cases\Many-Many (Noun in more than 1 synset)\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Sample\Other special cases\Many-Many (Noun in more than 1 synset)\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
 
             //---------------------------------------------------
             flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, " Many-Many (Noun in more than 1 synset) TestCase");
@@ -583,22 +584,22 @@ namespace wordNet_project
             Console.WriteLine("Running case1_100_100.................");
             //loading data from files
             List<string> synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
 
             List<string> hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\2hypernyms.txt");
 
             List<string> relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\3RelationsQueries.txt");
 
             List<string> outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\4OutcastQueries.txt");
             // loading output data from files
             List<string> Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output1.txt");
 
             List<string> Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
             //----------------------------------------------------------
             bool flag = Testing_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case1_100_100");
 
@@ -610,22 +611,22 @@ namespace wordNet_project
             Console.WriteLine("Running case2_1000_500.................");
             //loading data from files
             synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case2_1000_500\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\1-Small\Case2_1000_500\Input\1synsets.txt");
 
             hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\2hypernyms.txt");
 
             relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\3RelationsQueries.txt");
 
             outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\4OutcastQueries.txt");
             // loading output data from files
             Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output1.txt");
 
             Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case2_1000_500");
 
@@ -642,17 +643,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Medium Case1_10000_5000.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case1_10000_5000\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\2-Medium\Case1_10000_5000\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_10000_5000");
 
@@ -664,22 +665,22 @@ namespace wordNet_project
             Console.WriteLine("Running Case2_10000_50000.................");
             //loading data from files
             synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case2_10000_50000\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\2-Medium\Case2_10000_50000\Input\1synsets.txt");
 
             hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\2hypernyms.txt");
 
             relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\3RelationsQueries.txt");
 
             outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\4OutcastQueries.txt");
             // loading output data from files
             Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output1.txt");
 
             Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_10000_50000");
 
@@ -696,17 +697,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case1_82K_100K_5000RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case1_82K_100K_5000RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case1_82K_100K_5000RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_82K_100K_5000RQ");
 
@@ -719,17 +720,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case2_82K_300K_1500RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case2_82K_300K_1500RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case2_82K_300K_1500RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_82K_300K_1500RQ");
 
@@ -742,14 +743,14 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case3_82K_300K_5000RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case3_82K_300K_5000RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case3_82K_300K_5000RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\\Output\\Output1.txt");
 
 
             //----------------------------------------------------------
@@ -774,22 +775,22 @@ namespace wordNet_project
             Console.WriteLine("Running case1_100_100.................");
             //loading data from files
             List<string> synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
 
             List<string> hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\2hypernyms.txt");
 
             List<string> relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\3RelationsQueries.txt");
 
             List<string> outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\4OutcastQueries.txt");
             // loading output data from files
             List<string> Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output1.txt");
 
             List<string> Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
             //----------------------------------------------------------
             bool flag = Testing_Efficient_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case1_100_100");
 
@@ -801,22 +802,22 @@ namespace wordNet_project
             Console.WriteLine("Running case2_1000_500.................");
             //loading data from files
             synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case2_1000_500\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\1-Small\Case2_1000_500\Input\1synsets.txt");
 
             hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\2hypernyms.txt");
 
             relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\3RelationsQueries.txt");
 
             outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\4OutcastQueries.txt");
             // loading output data from files
             Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output1.txt");
 
             Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_Efficient_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case2_1000_500");
 
@@ -833,17 +834,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Medium Case1_10000_5000.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case1_10000_5000\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\2-Medium\Case1_10000_5000\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_Efficient_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_10000_5000");
 
@@ -855,22 +856,22 @@ namespace wordNet_project
             Console.WriteLine("Running Case2_10000_50000.................");
             //loading data from files
             synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case2_10000_50000\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\2-Medium\Case2_10000_50000\Input\1synsets.txt");
 
             hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\2hypernyms.txt");
 
             relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\3RelationsQueries.txt");
 
             outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\4OutcastQueries.txt");
             // loading output data from files
             Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output1.txt");
 
             Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_Efficient_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_10000_50000");
 
@@ -887,17 +888,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case1_82K_100K_5000RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case1_82K_100K_5000RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case1_82K_100K_5000RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_Efficient_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_82K_100K_5000RQ");
 
@@ -910,17 +911,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case2_82K_300K_1500RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case2_82K_300K_1500RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case2_82K_300K_1500RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_Efficient_complet(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_82K_300K_1500RQ");
 
@@ -933,14 +934,14 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case3_82K_300K_5000RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case3_82K_300K_5000RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case3_82K_300K_5000RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\\Output\\Output1.txt");
 
 
             //----------------------------------------------------------
@@ -964,22 +965,22 @@ namespace wordNet_project
             Console.WriteLine("Running case1_100_100.................");
             //loading data from files
             List<string> synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\1-Small\Case1_100_100\Input\1synsets.txt");
 
             List<string> hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\2hypernyms.txt");
 
             List<string> relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\3RelationsQueries.txt");
 
             List<string> outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\Input\\4OutcastQueries.txt");
             // loading output data from files
             List<string> Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output1.txt");
 
             List<string> Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
             //----------------------------------------------------------
             bool flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case1_100_100");
 
@@ -991,22 +992,22 @@ namespace wordNet_project
             Console.WriteLine("Running case2_1000_500.................");
             //loading data from files
             synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\1-Small\Case2_1000_500\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\1-Small\Case2_1000_500\Input\1synsets.txt");
 
             hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\2hypernyms.txt");
 
             relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\3RelationsQueries.txt");
 
             outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\Input\\4OutcastQueries.txt");
             // loading output data from files
             Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output1.txt");
 
             Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case2_1000_500");
 
@@ -1023,17 +1024,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Medium Case1_10000_5000.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case1_10000_5000\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\2-Medium\Case1_10000_5000\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_10000_5000");
 
@@ -1045,22 +1046,22 @@ namespace wordNet_project
             Console.WriteLine("Running Case2_10000_50000.................");
             //loading data from files
             synsets = new List<string>();
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\2-Medium\Case2_10000_50000\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\2-Medium\Case2_10000_50000\Input\1synsets.txt");
 
             hypernyms = new List<string>();
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\2hypernyms.txt");
 
             relationQueries = new List<string>();
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\3RelationsQueries.txt");
 
             outcastQueries = new List<string>();
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\Input\\4OutcastQueries.txt");
             // loading output data from files
             Output1 = new List<string>();
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output1.txt");
 
             Output2 = new List<string>();
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_10000_50000");
 
@@ -1079,17 +1080,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case1_82K_100K_5000RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case1_82K_100K_5000RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case1_82K_100K_5000RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_82K_100K_5000RQ");
 
@@ -1102,17 +1103,17 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case2_82K_300K_1500RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case2_82K_300K_1500RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case2_82K_300K_1500RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\3RelationsQueries.txt");
 
-            outcastQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\4OutcastQueries.txt");
+            outcastQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\Input\\4OutcastQueries.txt");
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output1.txt");
 
-            Output2 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
+            Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
             flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_82K_300K_1500RQ");
 
@@ -1125,14 +1126,14 @@ namespace wordNet_project
             //----------------------------------------------------------
             Console.WriteLine("Running Case3_82K_300K_5000RQ.................");
             //loading data from files
-            synsets = ReadFromFile.Read_From_File(@"\Testcases\Complete\3-Large\Case3_82K_300K_5000RQ\Input\1synsets.txt");
+            synsets = ReadFromFile.Read_From_File(@"Testcases\Complete\3-Large\Case3_82K_300K_5000RQ\Input\1synsets.txt");
 
-            hypernyms = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\2hypernyms.txt");
+            hypernyms = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\2hypernyms.txt");
 
-            relationQueries = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\3RelationsQueries.txt");
+            relationQueries = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\Input\\3RelationsQueries.txt");
 
             // loading output data from files
-            Output1 = ReadFromFile.Read_From_File(@"\Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\\Output\\Output1.txt");
+            Output1 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case3_82K_300K_5000RQ\\Output\\Output1.txt");
 
 
             //----------------------------------------------------------
@@ -1231,7 +1232,7 @@ namespace wordNet_project
             foreach (string i in words)
             {
                 int all_dis = 0;
-                int Id = 0;
+               
                 foreach (string j in words)
                 {
                   
@@ -1674,6 +1675,7 @@ String TestcaseName)
                     }
                 }
             }
+
             Console.WriteLine("time taken to run " + TestcaseName + " outcastQueries Queries in ms : " + sw.ElapsedMilliseconds);
 
             return flag;
