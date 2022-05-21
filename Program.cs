@@ -10,7 +10,7 @@ namespace wordNet_project
     {
         public static void Main(string[] args)
         {
-     
+          
             TestWordNetProject testProject = new TestWordNetProject();
             testProject.Test();
 

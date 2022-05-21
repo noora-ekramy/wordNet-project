@@ -410,7 +410,7 @@ namespace wordNet_project
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case1\\Output\\Output2.txt");
             //----------------------------------------------------------
 
-            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase1");
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Sample_testCase1");
 
 
             Console.WriteLine("Test Case 1 Completed :)");
@@ -436,7 +436,7 @@ namespace wordNet_project
             // loading output data from files
             Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case2\\Output\\Output1.txt");
             //---------------------------------------------------
-            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase2");
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Sample_testCase2");
 
             Console.WriteLine("Test Case 2 Completed :)");
             Console.WriteLine("------------------------------------");
@@ -461,7 +461,7 @@ namespace wordNet_project
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Case3\\Output\\Output2.txt");
 
             //---------------------------------------------------
-            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase3");
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Sample_testCase3");
 
             Console.WriteLine("Test Case 3 Completed :)");
             Console.WriteLine("------------------------------------");
@@ -488,7 +488,7 @@ namespace wordNet_project
 
 
             //---------------------------------------------------
-            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "testCase4");
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Sample_testCase4");
 
             Console.WriteLine("Test Case 4 Completed :)");
             Console.WriteLine("------------------------------------");
@@ -513,7 +513,7 @@ namespace wordNet_project
 
             //---------------------------------------------------
 
-            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Bidirectional TestCase");
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Sample_Bidirectional TestCase");
 
             Console.WriteLine("Test Case  Many-Many (Noun in more than 1 synset) TestCase Completed :)");
             Console.WriteLine("------------------------------------");
@@ -536,7 +536,7 @@ namespace wordNet_project
             Output1 = ReadFromFile.Read_From_File(@"Testcases\\Sample\\Other special cases\Many-Many (Noun in more than 1 synset)\\Output\\Output1.txt");
 
             //---------------------------------------------------
-            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, " Many-Many (Noun in more than 1 synset) TestCase");
+            flag = Testing_Efficient_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Sample_Many-Many (Noun in more than 1 synset) TestCase");
 
 
             Console.WriteLine("Test Case  Many-Many (Noun in more than 1 synset) TestCase Completed :)");
@@ -945,7 +945,7 @@ namespace wordNet_project
 
 
             //----------------------------------------------------------
-            flag = Testing_Efficient_complet(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case3_82K_300K_5000RQ");
+            flag = Testing_Efficient_complet(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_3-Larg_Case3_82K_300K_5000RQ");
 
             Console.WriteLine("Case3_82K_300K_5000RQ Completed :)");
             Console.WriteLine("------------------------------------");
@@ -982,7 +982,7 @@ namespace wordNet_project
             List<string> Output2 = new List<string>();
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case1_100_100\\Output\\Output2.txt");
             //----------------------------------------------------------
-            bool flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case1_100_100");
+            bool flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_1-Small_Case1_100_100");
 
             Console.WriteLine("case1_100_100 Completed :)");
             Console.WriteLine("------------------------------------");
@@ -1009,7 +1009,7 @@ namespace wordNet_project
             Output2 = new List<string>();
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\1-Small\Case2_1000_500\\Output\\Output2.txt");
             //----------------------------------------------------------
-            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "case2_1000_500");
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_1-Small_case2_1000_500");
 
             Console.WriteLine("case2_1000_500 Completed :)");
             Console.WriteLine("------------------------------------");
@@ -1036,7 +1036,7 @@ namespace wordNet_project
 
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case1_10000_5000\\Output\\Output2.txt");
             //----------------------------------------------------------
-            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_10000_5000");
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_2-Medium_Case1_10000_5000");
 
             Console.WriteLine("Case1_10000_5000 Completed :)");
             Console.WriteLine("------------------------------------");
@@ -1063,7 +1063,7 @@ namespace wordNet_project
             Output2 = new List<string>();
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\2-Medium\Case2_10000_50000\\Output\\Output2.txt");
             //----------------------------------------------------------
-            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_10000_50000");
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_2-Medium_Case2_10000_50000");
 
             Console.WriteLine("Case2_10000_50000 Completed :)");
             Console.WriteLine("------------------------------------");
@@ -1092,7 +1092,7 @@ namespace wordNet_project
 
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case1_82K_100K_5000RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
-            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case1_82K_100K_5000RQ");
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_3-Larg_Case1_82K_100K_5000RQ");
 
             Console.WriteLine("Case1_82K_100K_5000RQ Completed :)");
             Console.WriteLine("------------------------------------");
@@ -1115,7 +1115,7 @@ namespace wordNet_project
 
             Output2 = ReadFromFile.Read_From_File(@"Testcases\\Complete\3-Large\Case2_82K_300K_1500RQ\\Output\\Output2.txt");
             //----------------------------------------------------------
-            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case2_82K_300K_1500RQ");
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(true, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_3-Larg_Case2_82K_300K_1500RQ");
 
             Console.WriteLine("Case2_82K_300K_1500RQ Completed :)");
             Console.WriteLine("------------------------------------");
@@ -1137,7 +1137,7 @@ namespace wordNet_project
 
 
             //----------------------------------------------------------
-            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Case3_82K_300K_5000RQ");
+            flag = Testing_complet_Distance_and_SCA_between_Two_Nouns(false, synsets, hypernyms, relationQueries, outcastQueries, Output1, Output2, "Complete_3-Larg_Case3_82K_300K_5000RQ");
 
             Console.WriteLine("Case3_82K_300K_5000RQ Completed :)");
             Console.WriteLine("------------------------------------");
@@ -1315,7 +1315,7 @@ namespace wordNet_project
             if (isoutcastQueries)
             {
                 int cases_type_2 = int.Parse(outcastQueries[0]);
-                for (int i = 1; i < cases_type_2; i++)
+                for (int i = 1; i <= cases_type_2; i++)
                 {
                     string[] Splited_Line = outcastQueries[i].Split(',');
                     string[] output_one_line = Output2[i - 1].Split(" OR ");
@@ -1379,7 +1379,7 @@ namespace wordNet_project
             if (isoutcastQueries)
             {
                 int cases_type_2 = int.Parse(outcastQueries[0]);
-                for (int i = 1; i < cases_type_2; i++)
+                for (int i = 1; i <= cases_type_2; i++)
                 {
                     string[] Splited_Line = outcastQueries[i].Split(',');
                     string[] output_one_line = Output2[i - 1].Split(" OR ");
@@ -1412,6 +1412,8 @@ namespace wordNet_project
             Graph_Construction_For_Efficient_SCA test_Graph = new Graph_Construction_For_Efficient_SCA(synsets, hypernyms);
 
             int cases_type_1 = int.Parse(relationQueries[0]);
+           // string file_output1 = "", file_output2 = "";
+            
 
             for (int i = 1; i <= cases_type_1; i++)
             {
@@ -1422,14 +1424,19 @@ namespace wordNet_project
                  Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns EDSN = new Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns();
                 _SCA_ID = EDSN.Efficient_SCA_between_Two_Nouns(Splited_Line[0], Splited_Line[1], test_Graph.Graph, test_Graph.Words);
                 _dis = EDSN.Distance; bool fnd = false;
+               // file_output1 += _dis.ToString() + ",";
                 string[] output_simi_line = output_one_line[1].Split(" OR ");
                 foreach (string k in output_simi_line)
                 {
                     List<int> output_noun_synsets = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs(test_Graph.Words, k);
                     foreach (int j in output_noun_synsets)
                     {
-
-                        if (_SCA_ID == j) fnd = true;
+                       // if (fnd) file_output1 += " ";
+                        if (_SCA_ID == j)
+                        {
+                            fnd = true;
+                          //  file_output1 += k;
+                        }
                     }
                 }
                 if (_dis != int.Parse(output_one_line[0]) || !fnd)
@@ -1439,12 +1446,14 @@ namespace wordNet_project
                     flag = false;
                     // break;
                 }
+               // if (i != cases_type_1)
+                 //   file_output1 += "\n";
             }
-
+          //  WriteTofile.Write("Outfiles_" + TestcaseName + "_output1.txt", file_output1);
             if (isoutcastQueries)
             {
                 int cases_type_2 = int.Parse(outcastQueries[0]);
-                for (int i = 1; i < cases_type_2; i++)
+                for (int i = 1; i <= cases_type_2; i++)
                 {
                     string[] Splited_Line = outcastQueries[i].Split(',');
                     string[] output_one_line = Output2[i - 1].Split(" OR ");
@@ -1454,7 +1463,7 @@ namespace wordNet_project
                     foreach (string l in output_one_line)
                         if (l == s_word)
                             cast_FND = true;
-
+                  //  file_output2 += s_word + "\n";
 
 
 
@@ -1465,6 +1474,7 @@ namespace wordNet_project
                         // break;
                     }
                 }
+                //WriteTofile.Write("Outfiles_" + TestcaseName + "_output2.txt", file_output2);
             }
             return flag;
 
@@ -1511,7 +1521,7 @@ namespace wordNet_project
                 sw = Stopwatch.StartNew();
 
                 int cases_type_2 = int.Parse(outcastQueries[0]);
-                for (int i = 1; i < cases_type_2; i++)
+                for (int i = 1; i <= cases_type_2; i++)
                 {
                     string[] Splited_Line = outcastQueries[i].Split(',');
                     string[] output_one_line = Output2[i - 1].Split(" ");
@@ -1582,7 +1592,7 @@ String TestcaseName)
                 sw = Stopwatch.StartNew();
 
                 int cases_type_2 = int.Parse(outcastQueries[0]);
-                for (int i = 1; i < cases_type_2; i++)
+                for (int i = 1; i <= cases_type_2; i++)
                 {
                     string[] Splited_Line = outcastQueries[i].Split(',');
                     string[] output_one_line = Output2[i - 1].Split(" ");
@@ -1614,6 +1624,7 @@ String TestcaseName)
 List<string> relationQueries, List<string> outcastQueries, List<string> Output1, List<string> Output2,
 String TestcaseName)
         {
+           // string file_output1="" ,file_output2="";
             bool flag = true;
             Graph_Construction_For_Efficient_SCA test_Graph = new Graph_Construction_For_Efficient_SCA(synsets, hypernyms);
 
@@ -1627,6 +1638,7 @@ String TestcaseName)
                 Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns EDSN = new Efficient_Calculation_of_Distance_and_SCA_between_Two_Nouns();
                 _SCA_ID=  EDSN.Efficient_SCA_between_Two_Nouns(Splited_Line[0], Splited_Line[1], test_Graph.Graph, test_Graph.Words);
                 _dis = EDSN.Distance;
+            //    file_output1 += _dis.ToString()+",";
                 bool fnd = false;
                 string[] output_simi_line = output_one_line[1].Split(" ");
                 foreach (string k in output_simi_line)
@@ -1634,10 +1646,16 @@ String TestcaseName)
                     List<int> output_noun_synsets = MappingNounToSynsetsIDs.Maping_Noun_To_SynsetsIDs(test_Graph.Words, k);
                     foreach (int j in output_noun_synsets)
                     {
+                      //  if (fnd) file_output1 += " ";
 
-                        if (_SCA_ID == j) fnd = true;
+                        if (_SCA_ID == j)
+                        {
+                            fnd = true;
+                          //  file_output1 += k;
+                        }
                     }
                 }
+
                 if (_dis != int.Parse(output_one_line[0]) || !fnd)
                 {
                     Console.WriteLine("Wrong answer at test" + TestcaseName + "  number :" + i + "  FND_dis:" + _dis + ", E_dis:" + int.Parse(output_one_line[0]));
@@ -1645,15 +1663,19 @@ String TestcaseName)
                     flag = false;
                     // break;
                 }
+                //if(i!= cases_type_1)
+                //    file_output1 += "\n";
             }
             Console.WriteLine("time taken to run " + TestcaseName + " Distans Queries in ms : " + sw.ElapsedMilliseconds);
+            //  WriteTofile.Write("Outfiles_" + TestcaseName + "_output1.txt", file_output1);
+          //  WriteTofile.Write("time_Outfiles_" + TestcaseName + "_output1.txt","in ms : "+ sw.ElapsedMilliseconds.ToString() +"\nin s:  "+ (sw.ElapsedMilliseconds / 1000).ToString());
 
             if (isoutcastQueries)
             {
                 sw = Stopwatch.StartNew();
 
                 int cases_type_2 = int.Parse(outcastQueries[0]);
-                for (int i = 1; i < cases_type_2; i++)
+                for (int i = 1; i <= cases_type_2; i++)
                 {
                     string[] Splited_Line = outcastQueries[i].Split(',');
                     string[] output_one_line = Output2[i - 1].Split(" ");
@@ -1663,10 +1685,7 @@ String TestcaseName)
                     foreach (string l in output_one_line)
                         if (l == s_word)
                             cast_FND = true;
-
-
-
-
+                  //  file_output2 += s_word + "\n";
                     if (cast_FND == false)
                     {
                         Console.WriteLine("Wrong answer at test 1 number :" + i + "  outcastQueries ");
@@ -1674,9 +1693,12 @@ String TestcaseName)
                         // break;
                     }
                 }
+           //  WriteTofile.Write("Outfiles_" + TestcaseName + "_output2.txt", file_output2);
+
             }
 
             Console.WriteLine("time taken to run " + TestcaseName + " outcastQueries Queries in ms : " + sw.ElapsedMilliseconds);
+          //  WriteTofile.Write("time_Outfiles_" + TestcaseName + "_output2.txt", "in ms : " + sw.ElapsedMilliseconds.ToString() + "\nin s:  " + (sw.ElapsedMilliseconds / 1000).ToString());
 
             return flag;
 
